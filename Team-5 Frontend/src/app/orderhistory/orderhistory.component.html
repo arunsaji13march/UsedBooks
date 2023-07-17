@@ -1,0 +1,42 @@
+
+<h1 id="header">Order History</h1>
+<section class="intro">
+    <div class="bg-image" style="background-color: #F5F7FA;">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+                    <table class="table table-striped mb-0">
+                      <thead style="background-color: #002D72;">
+                        <tr>
+                          <th scope="col">Order Id</th>
+                          <th scope="col">Book Name</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Ordered Date</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Button</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let order of orders">
+                          <td>{{order.orderId}}</td>
+                          <td >{{order.bookName}}</td>
+                          <td>{{order.bookPrice}}</td>
+                          <td>{{order.orderDateAndTime}}</td>
+                          <td>{{order.orderStatus}}</td>
+                          <td><button class="btn btn-primary" *ngIf="order.orderStatus === 'Placed'" (click)="cancelOrder(order)" >Cancel</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

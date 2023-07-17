@@ -1,0 +1,68 @@
+.total{
+    display:flex;
+    flex-direction: row;
+    margin-left: 10%;
+    justify-content: space-evenly;
+    margin-top: 2%;
+}
+.buttonstyle {
+    margin-top: 15px;
+    font: inherit;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid lightblue;
+    outline: none;
+    background: none;
+    transition: all 0.3s ease;
+    width: 100px;
+    margin-left:30%;
+}
+.buttonstyle:hover {
+    background-color: lightblue;
+    color: black;
+}
+.red
+{
+    color: red;
+}
+.Logbutton
+{
+    margin-top: 15px;
+    font-size: 14px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid lightblue;
+    outline: none;
+    background: none;
+    transition: all 0.3s ease;
+    width: 60%;
+    color: black;
+    margin-left: 10%;
+}
+.Logbutton:hover{
+    background-color: lightblue;
+    color: black;
+}
+.name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+h2{
+    font-size: medium;
+}
+.text{
+    font-size: small;
+}
+.gender{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+

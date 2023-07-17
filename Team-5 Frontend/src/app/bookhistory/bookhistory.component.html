@@ -1,0 +1,78 @@
+<section class="image">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-50">
+      <div class="col">
+        <p><span class="h2">Your Books</span></p>
+
+        <ul *ngFor="let item of sellItems">
+          <div class="card mb-2 card shadow p-2">
+            <div>
+              <div class="row align-items-center">
+                <div class="col-md-2">
+                  <img
+                    src="{{ item.image}}"
+                    class="img-fluid"
+                    alt="Generic placeholder image"
+                  />
+                </div>
+
+                <div class="col-md-3 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-2 pb-2">BookName</p>
+
+                    <p class="lead fw-normal mb-0">{{ item.bookName }}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-2 pb-2">Author Name</p>
+
+                    <p class="lead fw-normal mb-0">
+                      {{ item.authorName }}
+                    </p>
+                  </div>
+                </div>
+               
+
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-2 pb-2">Book Status</p>
+
+                    <p class="lead fw-normal mb-0">{{ item.status }}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-1 d-flex justify-content-center ">
+                  <div>
+                    <p class="small text-muted mb-2 pb-2">Price</p>
+
+                    <p class="lead fw-normal mb-0">{{ item.price }}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div class="trash">
+                    <button
+                      class="btn btn-outline-dark p-2 px-3" (click)="editBook(item.bookId)">Edit</button>
+
+                    <button
+                      class="btn-danger p-2 px-3 ms-1" (click)="deleteBook(item.bookId)">
+                      <i class="fas fa-trash fa-lg"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ul>
+
+        <div class="d-flex justify-content-end">
+          <button type="button" (click)="continueShopping()" class="edit">
+            Continue shopping
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

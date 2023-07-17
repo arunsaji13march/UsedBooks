@@ -1,0 +1,47 @@
+<h1 id="header">ALL Orders</h1>
+<section class="intro">
+    <div class="bg-image h-100" style="background-color: #F5F7FA;">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12 demo">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+                    <table class="table table-striped mb-0 ">
+                      <thead style="background-color: #002D72 ">
+                        <tr>
+                          <th scope="col">OrderId</th>
+                          <th scope="col">UserId</th>
+                          <th scope="col">BookId</th>
+                          <th scope="col">User Name</th>
+                          <th scope="col">Mobile</th>
+                          <th scope="col">Order Date </th>
+                          <th scope="col">Delivery Address</th>
+                          <th scope="col">Order Status</th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let order of orderlist">
+                          <td>{{order.orderId}}</td>
+                          <td>{{order.userId}}</td>
+                          <td>{{order.bookId}}</td>
+                          <td>{{order.userName}}</td>
+                          <td>{{order.userPhoneNo}}</td>
+                          <td>{{order.orderDateAndTime}}</td>
+                          <td >{{order.userDeliveryAddress}}</td>
+                          <td>{{order.orderStatus}}</td>
+                          <td><button class="btn btn-primary" *ngIf="order.orderStatus === 'Placed'" (click)="deliver(order.orderId,'Delivered')" >Delivered</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

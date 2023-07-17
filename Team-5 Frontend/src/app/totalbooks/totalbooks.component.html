@@ -1,0 +1,49 @@
+<h1 id="header">Total Books</h1>
+<section class="intro">
+    <div class="bg-image h-100" style="background-color: #F5F7FA;">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12 demo">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+                    <table class="table table-striped mb-0 ">
+                      <thead style="background-color: #002D72 ">
+                        <tr>
+                          <th scope="col">BookId</th>
+                          <th scope="col">BookName</th>
+                          <th scope="col">Seller Id</th>
+                          <th scope="col">Author Name</th>
+                          <th scope="col">Created At</th>
+                          <th scope="col">Updated At </th>
+                          <th scope="col">Language</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">pickup Address</th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let order of booklist">
+                          <td>{{order.bookId}}</td>
+                          <td>{{order.bookName}}</td>
+                          <td>{{order.sellerId}}</td>
+                          <td>{{order.authorName}}</td>
+                          <td>{{order.createdAt}}</td>
+                          <td >{{order.updatedAt}}</td>
+                          <td>{{order.bookLanguage}}</td>
+                          <td>{{order.price}}</td>
+                          <td>{{order.pickUpAddress}}</td>
+                          <td><button class="btn btn-primary" (click)="delete(order.bookId)" >Delete</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

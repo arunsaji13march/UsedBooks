@@ -1,0 +1,120 @@
+<div id="all">
+  <div class="row mt-3 mx-3" style="margin-top:25px ;" id="extrnDiv">
+    <div class="col-md-3">
+      <div class="text-center" id="withImg">
+        <i id="animationDemo" data-mdb-animation="slide-right" data-mdb-toggle="animation"
+          data-mdb-animation-reset="true" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat"
+          class="fas fa-3x fa-shipping-fast text-white"></i>
+        <h3 class="mt-3 text-white" id="wel">Welcome</h3>
+        <p class="white-text">You are 30 seconds away from compleating your order!</p>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-white btn-rounded back-button" (click)=" goBack()">Go back</button>
+      </div>
+    </div>
+    <div class="col-md-9 justify-content-center">
+      <div class="card card-custom pb-4" id="curved">
+        <div class="card-body mt-0 mx-5">
+          <div class="text-center mb-3 pb-2 mt-3">
+            <h4 style="color: #495057 ;">Order Delivery Details</h4>
+          </div>
+          <form class="mb-0" #orderForm="ngForm" (submit)="placingOrder(orderForm)">
+            <div class="row mb-2">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form9Example1" class="form-control input-custom" name="userName"
+                    #userNameRef="ngModel" [(ngModel)]="oObj.userName" required minlength="3" />
+                  <label class="form-label" for="form9Example1">Name</label>
+                </div>
+                <small class="red form-item"
+                  *ngIf="userNameRef.invalid && (userNameRef.dirty || userNameRef.touched) && userNameRef.errors?.['required']">this
+                  is a Required field</small>
+                <small class="red form-item"
+                  *ngIf="userNameRef.invalid && (userNameRef.dirty || userNameRef.touched) && userNameRef.errors?.['minlength']">Name
+                  should be of minimum length of 3</small>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form9Example2" class="form-control input-custom" name="userDeliveryAddress"
+                    #userDeliveryAddressRef="ngModel" [(ngModel)]="oObj.userDeliveryAddress" required minlength="10"/>
+                  <label class="form-label" for="form9Example2">Address</label>
+                </div>
+                <small class="red"
+                  *ngIf="userDeliveryAddressRef.invalid && (userDeliveryAddressRef.dirty || userDeliveryAddressRef.touched) && userDeliveryAddressRef.errors?.['required']">this
+                  is a Required field</small>
+                <small class="red"
+                  *ngIf="userDeliveryAddressRef.invalid && (userDeliveryAddressRef.dirty || userDeliveryAddressRef.touched) && userDeliveryAddressRef.errors?.['minlength']">Address
+                  should be minimum of length 10</small>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form9Example3" class="form-control input-custom" name="userCity"
+                    #userCityRef="ngModel" [(ngModel)]="oObj.userCity" required minlength="3" />
+                  <label class="form-label" for="form9Example3">City</label>
+                </div>
+                <small class="red"
+                  *ngIf="userCityRef.invalid && (userCityRef.dirty || userCityRef.touched) && userCityRef.errors?.['required']">this
+                  is a Required field</small>
+                <small class="red"
+                  *ngIf="userCityRef.invalid && (userCityRef.dirty || userCityRef.touched) && userCityRef.errors?.['minlength']">City
+                  should be of minimum length of 3</small>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="number" id="form9Example4" class="form-control input-custom" name="userPincode"
+                    #userPincodeRef="ngModel" [(ngModel)]="oObj.userPincode" required minlength="6" maxlength="6" />
+                  <label class="form-label" for="form9Example4">Pincode</label>
+                </div>
+                <small class="red"
+                  *ngIf="userPincodeRef.invalid && (userPincodeRef.dirty || userPincodeRef.touched) && userPincodeRef.errors?.['required']">this
+                  is a Required field</small>
+                <small class="red"
+                  *ngIf="userPincodeRef.invalid && (userPincodeRef.dirty || userPincodeRef.touched) && userPincodeRef.errors?.['minlength']">Pincode
+                  should be of length 6</small>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="number" id="form9Example6" class="form-control input-custom" name="userPhoneNo"
+                    #userPhoneNoRef="ngModel" [(ngModel)]="oObj.userPhoneNo" required minlength="10" maxlength="10" />
+                  <label class="form-label" for="form9Example6">PhoneNo</label>
+                </div>
+                <small class="red"
+                  *ngIf="userPhoneNoRef.invalid && (userPhoneNoRef.dirty || userPhoneNoRef.touched) && userPhoneNoRef.errors?.['required']">this
+                  is a Required field</small>
+                <small class="red"
+                  *ngIf="userPhoneNoRef.invalid && (userPhoneNoRef.dirty || userPhoneNoRef.touched) && userPhoneNoRef.errors?.['minlength']">Phone
+                  No Should be of 10 digits</small>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="email" id="typeEmail" class="form-control input-custom" name="userEmail"
+                    #userEmailRef="ngModel" [(ngModel)]="oObj.userEmail" required
+                    pattern="[A-Za-z0-9._%+-]+@[A-Za-z]+\.com" minlength="7" />
+                  <label class="form-label" for="typeEmail">Email</label>
+                </div>
+                <small class="red"
+                  *ngIf="userEmailRef.invalid && (userEmailRef.dirty || userEmailRef.touched) && userEmailRef.errors?.['required']">this
+                  is a Required field</small>
+                <small class="red aligning container"
+                  *ngIf="userEmailRef.invalid && (userEmailRef.dirty || userEmailRef.touched) && userEmailRef.errors?.['minlength']">Mininmum
+                  of 7 characters</small>
+                <small class="red aligning container"
+                  *ngIf="userEmailRef.invalid && (userEmailRef.dirty || userEmailRef.touched) && userEmailRef.errors?.['pattern']">Enter
+                  Valid Email</small>
+              </div>
+            </div>
+            <div class="float-end ">
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-rounded" style="background-color: #0062CC ;">Place
+                order</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

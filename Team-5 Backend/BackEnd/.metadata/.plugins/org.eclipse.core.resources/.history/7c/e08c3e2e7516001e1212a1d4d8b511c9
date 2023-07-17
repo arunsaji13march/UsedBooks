@@ -1,0 +1,97 @@
+package com.project.order.model;
+
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.beans.factory.annotation.Value;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Orders {
+	
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	private int  orderId;
+	private int userId;
+	private String bookId;
+	@CreationTimestamp
+	private LocalDateTime orderDateAndTime;
+	private String userDeliveryAddress;
+	@Value("${orderStatus:Placed}")
+	@Enumerated(value = EnumType.STRING)
+	private OrderStatus orderStatus = OrderStatus.Placed;
+	
+	public Orders() {
+		super();
+	}
+
+	public Orders(int orderId, int userId, String bookId, LocalDateTime orderDateAndTime, String userDeliveryAddress,
+			OrderStatus orderStatus) {
+		super();
+		this.orderId = orderId;
+		this.userId = userId;
+		this.bookId = bookId;
+		this.orderDateAndTime = orderDateAndTime;
+		this.userDeliveryAddress = userDeliveryAddress;
+		this.orderStatus = orderStatus;
+	}
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
+	}
+
+	public LocalDateTime getOrderDateAndTime() {
+		return orderDateAndTime;
+	}
+
+	public void setOrderDateAndTime(LocalDateTime orderDateAndTime) {
+		this.orderDateAndTime = orderDateAndTime;
+	}
+
+	public String getUserDeliveryAddress() {
+		return userDeliveryAddress;
+	}
+
+	public void setUserDeliveryAddress(String userDeliveryAddress) {
+		this.userDeliveryAddress = userDeliveryAddress;
+	}
+
+	public OrderStatus getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	
+
+	
+	
+}

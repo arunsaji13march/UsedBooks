@@ -1,0 +1,102 @@
+<section class="bg-light">
+  <div class="container w-75 h-75 mt-4">
+      <div class="row">
+          <div class="col-lg-12  mb-sm-5">
+              <div class="card card-style1 border-0 shadow">
+                  <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                      <div class="row align-items-center">
+                          <div class="col-lg-6">
+                              <img src="https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg?w=740" alt="..." class="img-fluid">
+                          </div>
+                          <div class="col-lg-6 px-xl-10">
+                              <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 w-100 rounded mt-1">
+                                  <h3 class="h2 text-white mb-0 ">Dear,{{Obj.userFirstName}}</h3>
+                                  <h3 class="h2 text-white mb-0">{{Obj.userLastName}}</h3>
+                              </div>
+                              <ul class="list-unstyled mb-1-9">
+                                <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email:</span>{{Obj.userEmail}}</li>
+                                  <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">DOB:</span>{{Obj.userDob}}</li>
+                                  <!-- <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Gender:</span> {{ Obj.userGender }}</li> -->
+                                  <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Mobile:</span>{{Obj.userMobile}}</li>
+                                  <li class="display-28"><span class="display-26 text-secondary me-2 font-weight-600">Address:</span>  {{ Obj.userAddress }}</li>
+                              </ul>
+                              <button class="btn btn-outline-secondary "(click)="edit()"><i class="far fa-edit"></i></button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+  <div class="container last mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow" (click)="orders()">
+          <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334862.jpg?w=2000" class="card-img-top" alt="Image 1">
+          <div class="card-body">
+            <h2 class="card-title">Your Orders</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow" (click)="sellhistory()">
+          <img src="https://media.istockphoto.com/id/1092170968/vector/open-book-with-history-doodles-and-lettering.jpg?s=612x612&w=0&k=20&c=SvXn0O25eHC8ARjwlcn83kahxjMGl2ti_DDFGozBKqg=" class="card-img-top" alt="Image 2">
+          <div class="card-body">
+            <h2 class="card-title">Selling History</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow" (click)="cart()">
+          <img src="https://st3.depositphotos.com/4060975/17615/v/1600/depositphotos_176156496-stock-illustration-shopping-cart-full-shopping-items.jpg" class="card-img-top" alt="Image 3">
+          <div class="card-body">
+            <h2 class="card-title">Your Cart Items</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="subscription-packages mt-5 mb-3 packages">
+    <div class="container">
+      <h2>Subscription packages</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card shadow">
+            <!-- <img src="../../assets/Images/Golf.mp4" class="card-img-top" alt="Monthly Subscription"> -->
+            <video autoplay loop src="https://dl.dropbox.com/s/vzxa3klpomobn6x/silver.mp4?dl=0" class="card-img-top" alt="Monthly Subscription"></video>
+            <div class="card-body">
+              <h2 class="card-title">Monthly Subscription</h2>
+              <p class="card-text">Unlock unlimited access to our premium content for a month.</p>
+              <h3 class="card-price">$9.99</h3>
+              <a  class="btn btn-primary">Subscribe</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow">
+            <video  autoplay loop src="https://dl.dropbox.com/s/2ovopsyvn46445a/Golf.mp4?dl=0" class="card-img-top" alt="Yearly Subscription"></video>
+            <div class="card-body">
+              <h2 class="card-title">Yearly Subscription</h2>
+              <p class="card-text">Get a full year of unlimited access at a discounted price.</p>
+              <h3 class="card-price">$79.99</h3>
+              <a  class="btn btn-primary">Subscribe</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow">
+            <!-- <img src="../../assets/Images/platinum.mp4" class="card-img-top" alt="Lifetime Subscription"> -->
+            <video  autoplay loop src="https://dl.dropbox.com/s/k3ypspas80soqyd/platinum.mp4?dl=0" class="card-img-top" alt="Lifetime Subscription"></video>
+            <div class="card-body">
+              <h2 class="card-title">Lifetime Subscription</h2>
+              <p class="card-text">Enjoy lifetime access to our premium content.</p>
+              <h3 class="card-price">$299.99</h3>
+              <a class="btn btn-primary">Subscribe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

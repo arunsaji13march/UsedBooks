@@ -1,0 +1,52 @@
+.gradient-custom {
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    /* background-color:  #3931af ; */
+    }
+    .red{
+        color:red;
+    }
+    #all{
+        margin-top: 45px;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    #curved{
+        margin-top: 20px;
+        margin-bottom:20px;
+    }
+    #extrnDiv{
+        background-color:  #3931af ;
+    }
+    
+    .card-custom {
+    border-bottom-left-radius: 10% 50%;
+    border-top-left-radius: 10% 50%;
+    background-color: #f8f9fa ;
+    }
+    
+    
+    .input-custom {
+    background-color: white ;
+    }
+    
+    #wel{
+        padding-top: 7px;
+    }
+    .white-text {
+    color: hsl(52, 0%, 98%);
+    font-weight: 100 ;
+    font-size: 14px;
+    margin-top: 15px;
+    }
+    #withImg{
+        margin-top: 100px; 
+        margin-left: 10px;
+
+    }
+    
+    .back-button {
+    background-color: hsl(52, 0%, 98%);
+    font-weight: 700;
+    color: black ;
+    margin-top: 100px ;
+    }

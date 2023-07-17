@@ -1,0 +1,80 @@
+<section class="image">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-50">
+      <div class="col">
+        <p><span class="h2">Books Cart </span></p>
+
+        <ul *ngFor="let item of CartItems">
+          <div class="card mb-2 card shadow p-2">
+            <div>
+              <div class="row align-items-center">
+                <div class="col-md-3">
+                  <img
+                    src="{{ item.image}}"
+                    class="img-fluid"
+                    alt="Generic placeholder image"
+                  />
+                </div>
+
+                <div class="col-md-3 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-2 pb-2">BookName</p>
+
+                    <p class="lead fw-normal mb-0">{{ item.bookName }}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-1 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-2 pb-2">Cart Id</p>
+
+                    <p class="lead fw-normal mb-0">
+                      {{ item.cartId }}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-2 pb-2">Book price</p>
+
+                    <p class="lead fw-normal mb-0">{{ item.price }}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-3 d-flex justify-content-center">
+                  <div class="trash">
+                    <button
+                      class="btn btn-outline-dark p-2 px-3"
+                      [routerLink]="['/orderdelivery']"
+                      [queryParams]="{ bookId: item.bookId }"
+                    >
+                      Order
+                    </button>
+
+                    <button
+                      class="btn-danger p-2 px-3 ms-1"
+                      (click)="delete(item.cartId)"
+                    >
+                      <i class="fas fa-trash fa-lg"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ul>
+
+        <div class="d-flex justify-content-end">
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            routerLink="/home"
+          >
+            Continue shopping
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

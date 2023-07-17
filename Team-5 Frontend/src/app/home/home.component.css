@@ -1,0 +1,22 @@
+.cover-image {
+  background-image: url('https://dl.dropbox.com/s/hy6prlgbbmg53md/7929073.jpg?dl=0');
+  background-size: cover;
+  background-position: center;
+  height: 70%;
+  width: auto;
+}
+  .card{
+    flex-basis: 18rem; /* Optional: Set the width of each card */
+    margin-bottom: 20px; /* Optional: Add margin between cards */
+  }
+ .card img{
+  height:200px ;
+ }
+ a{
+  text-decoration: none;
+  color: black;
+ }
+   
+ .buy-btn{
+  color: white;
+ }

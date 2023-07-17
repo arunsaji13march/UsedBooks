@@ -1,0 +1,24 @@
+  
+<div class="container-fluid cover-image">
+</div>
+<app-dropdown></app-dropdown>
+<div class="d-flex align-content-start flex-wrap" >
+    
+    <div class="cardContainer m-md-4 m-2"  *ngFor="let book of booksList" (click)="goToProduct(book.bookId,$event)">  
+        <div class="card shadow" id="cardItem" style="width: 18rem" >
+            <img src={{book.image}} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h4 class="card-title">{{book.bookName}}</h4>
+              <h5 class="card-subtitle mb-2 text-muted">{{book.authorName}}</h5>
+              <h5 class="card-subtitle mb-2 text-muted">{{book.category}}</h5>
+              <h5 class="card-subtitle mb-2 text-muted">{{book.bookCondition}}</h5>
+              <h4 class="card-title">&#8377;{{book.price}}</h4>
+              <a [routerLink]="['/orderdelivery']" [queryParams]="{ bookId: book.bookId }" class="btn btn-primary buy-btn">Buy</a>
+              <button (click)="addToCart(book,$event)" class="btn btn-outline-dark ms-2"  ><i class="fa-solid fa-cart-shopping" ></i></button>
+
+            </div>
+          </div>
+    </div>
+
+</div>
+<router-outlet></router-outlet>  

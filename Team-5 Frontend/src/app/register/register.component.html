@@ -1,0 +1,152 @@
+<!-- <h1 class="text-dark mb-4 ">Apply for a job</h1> -->
+<div class="total">
+    <!-- <div class="col-md-6 col-lg-5 d-none d-md-block">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+        alt="register form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+    </div> -->
+    
+    <div class="col-md-5 d-none d-md-block">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+        alt="Sample photo" class="img-fluid"
+        alt="register form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+    </div>
+    <div>
+    <section class=" bg-image">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div >
+                        <div class="card" style="border-radius: 15px">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-2">Create an account</h2>
+                                <form [formGroup]="myForm" (ngSubmit)="register(myForm)">
+                                    <div class="form-outline mb-1">
+                                        <label class="form-label" for="userEmail">Email address</label>
+                                        <input matInput type="email" class="form-control form-control-lg text"
+                                            id="userEmail" name="userEmail" placeholder="Email" formControlName="userEmail"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+                                        <span
+                                            *ngIf="userEmail && userEmail.invalid && (userEmail.dirty || userEmail.touched) && userEmail.errors?.['required']"
+                                            class="red">email is Required field !!!</span>
+                                        <span *ngIf="userEmail && userEmail.errors?.['pattern']" class="red">
+                                            Email should be in the format abc@xyz.com</span>
+                                    </div>
+    
+                                    <div class="name">
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="userFirstName">First name</label>
+                                            <input matInput type="text" id="userFirstName"
+                                                class="form-control form-control-lg text" name="userFirstName"
+                                                placeholder="First Name" formControlName="userFirstName" minlength="4" />
+                                            <span
+                                                *ngIf="userFirstName && userFirstName.invalid && (userFirstName.dirty || userFirstName.touched) && userFirstName.errors?.['required']"
+                                                class="red">First name is Required field !!!</span>
+                                            <span *ngIf="userFirstName && userFirstName.errors?.['minlength'] "
+                                                class="red">First name should be minimum of 4 letters</span>
+                                        </div>
+                                        <div class="form-outline mb-2 ms-2">
+                                            <label class="form-label" for="userLastName ">Last Name</label>
+                                            <input matInput type="text" id="userLastName"
+                                                class="form-control form-control-lg text" name="userLastName"
+                                                placeholder="LastName" formControlName="userLastName" minlength="4" />
+                                            <span
+                                                *ngIf="userLastName && userLastName.invalid && (userLastName.dirty || userLastName.touched) && userLastName.errors?.['required']"
+                                                class="red">Last name is Required field !!!</span>
+                                            <span *ngIf="userLastName && userLastName.errors?.['minlength'] "
+                                                class="red">Last name should be minimum of 4 letters</span>
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="userDob">Date Of Birth</label>
+                                        <input matInput type="date" id="userDob" name="userDob" placeholder="DOB"
+                                            class="form-control form-control-lg text" formControlName="userDob"
+                                            minlength="8" />
+                                        <span
+                                            *ngIf="userDob && userDob.invalid && (userDob.dirty || userDob.touched) && userDob.errors?.['required']"
+                                            class="red">DOB is Required field !!!</span>
+                                        <span *ngIf="userDob && userDob.errors?.['minlength'] " class="red">This Field
+                                            should be minimum of 6 letters</span>
+                                    </div>
+    
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="userGender">Gender</label>
+    
+                                        <select formControlName="userGender" id="userGender"
+                                            class="form-control form-control-lg text" required>
+                                            <option value="">Select Gender</option>
+    
+                                            <option value="Used">Male</option>
+    
+                                            <option value="New">Female</option>
+                                        </select>
+                                        <span
+                                        *ngIf="userGender && userGender.invalid && (userGender.dirty || userGender.touched) && userGender.errors?.['required']"
+                                        class="red">Gender is Required field !!!</span>
+                                    </div>
+    
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="userMobile">Mobile Number</label>
+                                        <input matInput type="text" id="userMobile" name="userMobile" placeholder="Mobile Number"
+                                        class="form-control form-control-lg text" formControlName="userMobile"
+                                        minlength="10" maxlength="10" pattern="^[0-9]{10}$" />
+                                    
+                                    <span class="red"
+                                        *ngIf="userMobile && userMobile.invalid && (userMobile.dirty || userMobile.touched) && userMobile.errors?.['required']">
+                                        Mobile Number is a required field!
+                                    </span>
+                                    
+                                    <span class="red"
+                                        *ngIf="userMobile && userMobile.errors?.['minlength'] && userMobile.errors?.['pattern']">
+                                        Mobile Number should be a 10-digit number.
+                                    </span>
+                                    
+                                    <span class="red"
+                                        *ngIf="userMobile && userMobile.errors?.['pattern'] && !userMobile.errors?.['minlength']">
+                                        Mobile Number should only contain numbers.
+                                    </span>
+                                    </div>
+                                    
+    
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="userAddress">Address</label>
+                                        <input matInput type="text" id="userAddress" name="userAddress"
+                                            placeholder="Address" class="form-control form-control-lg text"
+                                            formControlName="userAddress" minlength="30" />
+                                        <span class="red"
+                                            *ngIf="userAddress && userAddress.invalid && (userAddress.dirty || userAddress.touched) && userAddress.errors?.['required']">
+                                            User Address is Required field !!!</span>
+                                        <span class="red" *ngIf="userAddress &&  userAddress.errors?.['minlength'] ">Address
+                                            should be minimum of 30 letters</span>
+                                    </div>
+    
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="userPassword">Password</label>
+                                        <input matInput type="password" id="userPassword" name="userPassword"
+                                            placeholder="Password" class="form-control form-control-lg text"
+                                            formControlName="userPassword" minlength="8" />
+                                        <span class="red"
+                                            *ngIf="userPassword && userPassword.invalid && (userPassword.dirty || userPassword.touched) && userPassword.errors?.['required']">User
+                                            password is Required field !!!
+                                        </span>
+                                        <span class="red"
+                                            *ngIf="userPassword &&  userPassword.errors?.['minlength'] ">Password should be
+                                            minimum of 8 letters</span>
+                                    </div>
+                                    <button class="buttonstyle" type="submit" [disabled]="myForm.invalid">
+                                        Submit
+                                    </button>
+                                </form>
+    
+                                <button class="Logbutton" (click)="route()">
+                                    Already have Account?? Login!!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    </div>

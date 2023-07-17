@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <img src={{books.image}} class="img-fluid book-image" alt="Book Image">
+      </div>
+      <div class="col-md-6">
+        <div class="book-details">
+          <h2 class="book-name">{{books.bookName}}</h2>
+          <p class="book-author">Author :{{books.authorName}}</p>
+          <p class="book-price">Price: &#8377;{{books.price}}</p>
+          <p class="book-language">Language: {{books.bookLanguage}}</p>
+          <p class="book-language">Category: {{books.category}}</p>
+          <p class="book-condition">Condition: {{books.bookCondition}}</p>
+          <p class="book-status">Status: {{books.status}}</p>
+          <p class="book-info">Book Details: {{books.bookDetails}}</p>
+          <p class="book-address">Pickup Address: {{books.pickUpAddress}}</p>
+          <div class="container d-flex justify-content-center mt-5">
+            <a [routerLink]="['/orderdelivery']" [queryParams]="{ bookId: bookId }" class="btn btn-primary px-3">Buy</a>
+            <button  class="btn btn-outline-dark mx-3 px-3 "><i class="fa-solid fa-cart-shopping" (click)="addToCart(books)"></i></button>
+        
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+<router-outlet></router-outlet>
+  

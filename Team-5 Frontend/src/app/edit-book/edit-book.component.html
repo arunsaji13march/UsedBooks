@@ -1,0 +1,147 @@
+<div class="cover-image"></div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12 c">
+      <div class="card shadow-lg p-3 mb-5 bg-body rounded ">
+        <div class="card-header">
+          update book
+        </div>  
+        <div class="card-body">
+          <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+            
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md">
+                  <label for="bookName">Book Name</label>
+                  <input type="text" formControlName="bookName" id="bookName" class="form-control" name="bookName" [value]="existingbook?.bookName"  required>
+
+                  <span
+                      *ngIf="bookName  && bookName.invalid && (bookName.dirty || bookName.touched) && bookName.errors?.['required']"
+                      class="red">Required</span>
+
+                </div>
+                <div class="col-md">
+                  <label for="price">Price</label>
+                  <input type="number" formControlName="price" id="price" class="form-control" name="price" [value]="existingbook?.price" required>
+
+                  <span
+                      *ngIf="price  && price.invalid && (price.dirty || price.touched) && price.errors?.['required']"
+                      class="red">Required</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="authorName">Author Name</label>
+              <input type="text" formControlName="authorName" id="authorName" class="form-control" placeholder="Enter author name" value required>
+
+              <span
+                      *ngIf="authorName  && authorName.invalid && (authorName.dirty || authorName.touched) && authorName.errors?.['required']"
+                      class="red">Required</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="bookDetails">Book Details</label>
+              <textarea formControlName="bookDetails" id="bookDetails" class="form-control" placeholder="Enter book details" value="{{existingbook.bookDetails}}" required></textarea>
+              <span
+                      *ngIf="bookDetails  && bookDetails.invalid && (bookDetails.dirty || bookDetails.touched) && bookDetails.errors?.['required']"
+                      class="red">Required</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="bookLanguage">Book Language</label>
+              <input type="text" formControlName="bookLanguage" id="bookLanguage" class="form-control" placeholder="Enter book language" value="{{existingbook.bookLanguage}}" required>
+
+              <span
+                      *ngIf="bookLanguage && bookLanguage.invalid && (bookLanguage.dirty || bookLanguage.touched) && bookLanguage.errors?.['required']"
+                      class="red">Required</span>
+            </div>
+            
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md">
+                  <label for="category">Book Category</label>
+                  <select formControlName="category" id="category" class="form-control" required>
+                    <option value="{{existingbook.category}}">Select book condition</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Novel">Novel</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Education">Education</option>
+                    <option value="Biography">Biography</option>
+                    <option value="History">History</option>
+                    <option value="Children">Children</option>
+                    <option value="Health">Health</option>
+                    <option value="Non Fiction">Non Fiction</option>
+                    <option value="Other">Others</option>
+
+                  </select>                     
+                  <span
+                      *ngIf="category && category.invalid && (category.dirty || category.touched) && category.errors?.['required']"
+                      class="red">Required</span>                                        
+                </div>
+                <div class="col-md">
+                  <label for="bookCondition">Book Condition</label>
+                  <select formControlName="bookCondition" id="bookCondition" class="form-control" required>
+                    <option value="{{existingbook.bookCondition}}">Select book condition</option>
+                    <option value="Used">Used</option>
+                    <option value="New">New</option>
+                  </select>
+                  <span
+                      *ngIf="bookCondition && bookCondition.invalid && (bookCondition.dirty || bookCondition.touched) && bookCondition.errors?.['required']"
+                      class="red">Required</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select formControlName="status" id="status" class="form-control" value="{{existingbook.status}}"required>
+                <option value="">Select status</option>
+                <option value="Sold">Sold</option>
+                <option value="Available">Available</option>
+              </select>
+              <span
+                      *ngIf="status && status.invalid && (status.dirty || status.touched) && status.errors?.['required']"
+                      class="red">Required</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="image">Image</label>
+              <input type="text" formControlName="image" id="image" class="form-control" placeholder="Enter image URL" value="{{existingbook.image}}" required>
+              <span
+                      *ngIf="image  && image.invalid && (image.dirty || image.touched) && image.errors?.['required']"
+                      class="red">Required</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="pickUpAddress">Pickup Address</label>
+              <input type="text" formControlName="pickUpAddress" id="pickUpAddress" class="form-control" placeholder="Enter pickup address" value="{{existingbook.pickUpAddress }}" required>
+              <span
+                      *ngIf="pickUpAddress && pickUpAddress.invalid && (pickUpAddress.dirty || pickUpAddress.touched) && pickUpAddress.errors?.['required']"
+                      class="red">Required</span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

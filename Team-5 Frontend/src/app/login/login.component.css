@@ -1,0 +1,33 @@
+button {
+    margin-top: 15px;
+    font: inherit;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid lightblue;
+    outline: none;
+    background: none;
+    color: black;
+    transition: all 0.3s ease;
+    width: 100px;
+    margin-left: 40%;
+}
+
+button:hover
+{
+    background-color: lightblue;
+}
+
+.red {
+    color: red;
+}
+
+
+
+.regbutton
+{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}

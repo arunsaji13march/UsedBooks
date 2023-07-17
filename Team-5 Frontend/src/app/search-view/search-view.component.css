@@ -1,0 +1,69 @@
+/* 
+.book-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .book-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .book-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  @media (max-width: 767px) {
+    .book-list {
+      max-height: 150px;
+    }
+  }
+  .book-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  .book-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+
+  .book-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .book-name {
+    font-weight: bold;
+  }
+  .book-author {
+    font-weight: normal;
+  }
+
+  .book-price {
+    color: #888888;
+  } */
+  
+
+
+  
+  .card{
+    flex-basis: 18rem; /* Optional: Set the width of each card */
+    margin-bottom: 20px; /* Optional: Add margin between cards */
+  }
+ .card img{
+  height:200px ;
+ }
+ a{
+  text-decoration: none;
+  color: black;
+ }
+   
+ 

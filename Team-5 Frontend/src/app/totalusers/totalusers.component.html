@@ -1,0 +1,46 @@
+
+<h1 id="header">Registered Users</h1>
+<section class="intro">
+    <div class="bg-image h-100" style="background-color: #F5F7FA;">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12 demo">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+                    <table class="table table-striped mb-0 ">
+                      <thead style="background-color: #002D72;">
+                        <tr>
+                          <th scope="col">Email</th>
+                          <th scope="col">FirstName</th>
+                          <th scope="col">LastName</th>
+                          <th scope="col">Dob</th>
+                          <th scope="col">Gender</th>
+                          <th scope="col">Mobile</th>
+                          <th scope="col">Address</th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let order of reglist">
+                          <td>{{order.userEmail}}</td>
+                          <td >{{order.userFirstName}}</td>
+                          <td>{{order.userLastName}}</td>
+                          <td>{{order.userDob}}</td>
+                          <td>{{order.userGender}}</td>
+                          <td>{{order.userMobile}}</td>
+                          <td>{{order.userAddress}}</td>
+                          <td><button class="btn btn-primary" (click)="delete(order.userId)" >Delete</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

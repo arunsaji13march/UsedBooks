@@ -1,0 +1,145 @@
+package com.project.order.model;
+
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.beans.factory.annotation.Value;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Orders {
+	
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	private int  orderId;
+	private int userId;
+	private String bookId;
+	@CreationTimestamp
+	private LocalDateTime orderDateAndTime;
+	private String userName;
+	private String userDeliveryAddress;
+	private String userCity;
+	private int userPinCode;
+	private String userEmail;
+	private long userPhoneNo;
+	@Value("${orderStatus:Placed}")
+	@Enumerated(value = EnumType.STRING)
+	private OrderStatus orderStatus = OrderStatus.Placed;
+	
+	public Orders() {
+		super();
+	}
+
+	public Orders(int orderId, int userId, String bookId, LocalDateTime orderDateAndTime, String userName,
+			String userDeliveryAddress, String userCity, int userPinCode, String userEmail, long userPhoneNo,
+			OrderStatus orderStatus) {
+		super();
+		this.orderId = orderId;
+		this.userId = userId;
+		this.bookId = bookId;
+		this.orderDateAndTime = orderDateAndTime;
+		this.userName = userName;
+		this.userDeliveryAddress = userDeliveryAddress;
+		this.userCity = userCity;
+		this.userPinCode = userPinCode;
+		this.userEmail = userEmail;
+		this.userPhoneNo = userPhoneNo;
+		this.orderStatus = orderStatus;
+	}
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
+	}
+
+	public LocalDateTime getOrderDateAndTime() {
+		return orderDateAndTime;
+	}
+
+	public void setOrderDateAndTime(LocalDateTime orderDateAndTime) {
+		this.orderDateAndTime = orderDateAndTime;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getUserDeliveryAddress() {
+		return userDeliveryAddress;
+	}
+
+	public void setUserDeliveryAddress(String userDeliveryAddress) {
+		this.userDeliveryAddress = userDeliveryAddress;
+	}
+
+	public String getUserCity() {
+		return userCity;
+	}
+
+	public void setUserCity(String userCity) {
+		this.userCity = userCity;
+	}
+
+	public int getUserPinCode() {
+		return userPinCode;
+	}
+
+	public void setUserPinCode(int userPinCode) {
+		this.userPinCode = userPinCode;
+	}
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
+	public long getUserPhoneNo() {
+		return userPhoneNo;
+	}
+
+	public void setUserPhoneNo(long userPhoneNo) {
+		this.userPhoneNo = userPhoneNo;
+	}
+
+	public OrderStatus getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	
+}

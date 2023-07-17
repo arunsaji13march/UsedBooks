@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content>
+  <p>{{ data.message }}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="center" class="spacing">
+  <button mat-button mat-dialog-close color="primary" class="btn btn-outline-primary spacing" (click)="onOkClick()">OK</button>
+  <button mat-button mat-dialog-close color="warn" class="btn btn-outline-danger spacing" (click)="onCancelClick()">Cancel</button>
+</mat-dialog-actions>

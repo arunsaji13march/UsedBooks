@@ -1,0 +1,107 @@
+<!-- 
+<h3>Log in to access all our services and products</h3>
+<div class="total">
+<img src="../../assets/Images/Book.avif">
+<div class="login-container">
+    <div class="login-form">
+        <form #loginForm="ngForm" (submit)="Login(loginForm)">
+            <div class="form-group">
+                <label for="userEmail">Email address</label>
+                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp"
+                    placeholder="Enter email" name="userEmail" #userEmail="ngModel" [(ngModel)]="uObj.userEmail" required
+                    minlength="3" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <small class="red"
+                    *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched) && userEmail.errors?.['required'] ">
+                    Email is Required Field!
+                </small>
+                <small class="red" *ngIf="userEmail && userEmail.errors?.['pattern']" class="red"> Email should be in
+                    the format abc@xyz.com</small>
+            </div>
+            <div class="form-group">
+                <label for="userPassword">Password</label>
+                <input type="password" class="form-control" id="userPassword" placeholder="Password"
+                    name="userPassword" #userPassword="ngModel" [(ngModel)]="uObj.userPassword" required minlength="8">
+                <small class="red"
+                    *ngIf="userPassword.invalid && (userPassword.dirty || userPassword.touched) && userPassword.errors?.['required'] ">
+                    User password is Required field !!!
+                </small>
+                <small class="red"
+                    *ngIf="userPassword.invalid && (userPassword.dirty || userPassword.touched) && userPassword.errors?.['minlength'] ">
+                    Password should be minimum 8 letters
+                </small>
+                <br>
+                <mat-checkbox class="example-margin">Remember Me</mat-checkbox>
+            </div>
+            <button type="submit" [disabled]="loginForm.invalid" >Login!!</button>
+        </form>
+
+        <button class="regbutton" (click)="route()">Don't have Account?? Register!!</button>
+    </div>
+</div>
+</div> -->
+
+
+
+<section class="vh-100" style="background-color: #9A616D;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form #loginForm="ngForm" (submit)="Login(loginForm)">
+  
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                      <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                      <span class="h1 fw-bold mb-0">Login</span>
+                    </div>
+  
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+  
+                    <div class="form-outline mb-4">
+                      <label for="userEmail" class="form-label" for="form2Example17">Email address</label>
+                      <input MatInput type="email" id="form2Example17" type="email" id="userEmail" aria-describedby="emailHelp"
+                      placeholder="Enter email" name="userEmail" #userEmail="ngModel" [(ngModel)]="uObj.userEmail" required
+                      minlength="3" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control form-control-lg" />
+                      <small class="red"
+                    *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched) && userEmail.errors?.['required'] ">
+                    Email is Required Field!
+                </small>
+                <small class="red" *ngIf="userEmail && userEmail.errors?.['pattern']" class="red"> Email should be in
+                    the format abc@xyz.com</small>
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                      <label  for="userPassword" class="form-label" for="form2Example27">Password</label>
+                      <input MatIn type="password" id="form2Example27" type="password" class="form-control" id="userPassword" placeholder="Password"
+                      name="userPassword" #userPassword="ngModel" [(ngModel)]="uObj.userPassword" required minlength="8" class="form-control form-control-lg" />
+                      <small class="red"
+                    *ngIf="userPassword.invalid && (userPassword.dirty || userPassword.touched) && userPassword.errors?.['required'] ">
+                    User password is Required field !!!
+                </small>
+                <small class="red"
+                    *ngIf="userPassword.invalid && (userPassword.dirty || userPassword.touched) && userPassword.errors?.['minlength'] ">
+                    Password should be minimum 8 letters
+                </small>
+                    </div>
+                    <div class="pt-1 mb-12">
+                      <button type="submit" [disabled]="loginForm.invalid" >Login!!</button>
+                    </div>
+                  </form>
+
+                  <button class="regbutton" (click)="route()">Don't have Account?? Register!!</button>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

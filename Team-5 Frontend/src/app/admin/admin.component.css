@@ -1,0 +1,21 @@
+.container{
+    overflow: hidden;
+}
+h1{
+    margin-left: 40%;
+    margin-top: 5%;
+}
+.box1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+.card{
+    width: 100%;
+    margin-right: 5px;
+}
+@media (max-width: 600px) {
+    .box1 {
+      flex-direction: column;
+    }
+}

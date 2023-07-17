@@ -1,0 +1,23 @@
+.edit {
+  margin-top: 5px;
+  font: inherit;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid lightblue;
+  outline: none;
+  background: none;
+  transition: all 0.3s ease;
+  width: 100px;
+  margin-left: 5%;
+}
+
+.edit:hover {
+  background-color: lightblue;
+
+  color: black;
+}
+.image img{
+    height: 120px;
+}

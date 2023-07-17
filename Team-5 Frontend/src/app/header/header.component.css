@@ -1,0 +1,5 @@
+.navbar-icon {
+  width: 32px; /* Adjust the width as per your requirements */
+  height: 32px; /* Adjust the height as per your requirements */
+  object-fit: contain;
+}

@@ -1,0 +1,30 @@
+:host {
+    display: block;
+    text-align: center;
+  }
+  
+  img {
+    max-width: 50%;
+    height: auto;
+  }
+  .demo{
+    display: flex;
+    flex-direction: column;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .text-fade-in {
+    animation: fadeIn 1s ease-in;
+  }
+  .text-fade-in{
+    font-size: large;
+
+  }
+  
