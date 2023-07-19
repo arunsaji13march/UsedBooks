@@ -21,6 +21,14 @@ export class HomeComponent implements OnInit{
     bookId:string='';
     userId:any;
     cartItems: Cart[];
+
+    status:string="Available"
+
+    currentPage= 0;
+    itemsPerPage = 6;
+    totalBooksCount = 0;
+
+
   constructor(private bookService:BookServiceService, private router:Router,private cartService:CartService,private loginService:LoginService, private authService:AuthService, private notifyService:NotificationService){
     this.books=new Books();
     this.booksList=[];
@@ -28,14 +36,23 @@ export class HomeComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.bookService.getBooksByStatus("Available").subscribe(
-      bookData=>{this.booksList=bookData,
-      console.log(this.booksList)},
-      err=>console.log(err)
-    )
+   this.loadBooks();
   }
 
-  
+  loadBooks() :void{
+      // this.bookService.getBooksByStatus("Available").subscribe(
+      //   bookData=>{this.booksList=bookData,
+      //   console.log(this.booksList)},
+      //   err=>console.log(err)
+      // )
+      this.bookService.getBooksByStatus(this.status,this.currentPage,this.itemsPerPage)
+      .subscribe((response: any) => {
+        this.booksList = response.content;
+        console.log(response)
+        this.totalBooksCount = response.totalElements;
+        console.log(this.booksList);
+      });
+  }
 
 goToProduct(bookId:string, event: Event) {
   if (!(event.target as HTMLElement).classList.contains('btn')) {
@@ -86,6 +103,14 @@ addToCart(book: Books, event: Event) {
       this.router.navigate(['/login']);
     }
   }
+}
+getTotalPages(): number {
+  return Math.ceil(this.totalBooksCount / this.itemsPerPage);
+}
+
+onPageChange(pageNumber: number): void {
+  this.currentPage = pageNumber;
+  this.loadBooks();
 }
 
 }

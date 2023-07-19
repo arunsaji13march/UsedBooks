@@ -16,6 +16,10 @@ export class CategoryListComponent implements OnInit {
   category: string = "";
   status:string="Available";
 
+  currentPage= 0;
+  itemsPerPage = 6;
+  totalBooksCount = 0;
+
   constructor(
     private bookService: BookServiceService,
     private router: Router,
@@ -23,6 +27,11 @@ export class CategoryListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.loadBooks();
+  }
+
+
+  loadBooks(){
     this.activateRoute.params.pipe(
       switchMap(params => {
         this.category = params['category'];
@@ -32,6 +41,15 @@ export class CategoryListComponent implements OnInit {
     ).subscribe((result: Books[]) => {
       this.books = result;
     });
+  }
+
+  getTotalPages(): number {
+    return Math.ceil(this.totalBooksCount / this.itemsPerPage);
+  }
+  
+  onPageChange(pageNumber: number): void {
+    this.currentPage = pageNumber;
+    this.loadBooks();
   }
 
 

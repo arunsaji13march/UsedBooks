@@ -1,9 +1,12 @@
 package com.Book.controller;
 
 import java.util.List;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -38,12 +41,28 @@ public class BookController {
 	
 	ResponseEntity<?> responseEntity;
 	
+//	@GetMapping("/getAllBooks")
+//		public ResponseEntity<?> getUserHandler(){
+//		List<Book> bookList = this.bookService.getAllBooks();
+//		responseEntity = new ResponseEntity<>(bookList,HttpStatus.OK);
+//		return responseEntity.ok(bookList);
+//	}	
+	
 	@GetMapping("/getAllBooks")
-		public ResponseEntity<?> getUserHandler(){
-		List<Book> bookList = this.bookService.getAllBooks();
-		responseEntity = new ResponseEntity<>(bookList,HttpStatus.OK);
-		return responseEntity.ok(bookList);
-	}	
+	public ResponseEntity<?> getAllBooksHandler(@RequestParam(defaultValue = "0") int page,
+	                                            @RequestParam(defaultValue = "5") int size) {
+	    Page<Book> bookPage = this.bookService.getAllBooks(page, size);
+	    List<Book> bookList = bookPage.getContent();
+
+	    Map<String, Object> response = new HashMap<>();
+	    response.put("data", bookList);
+	    response.put("page", page);
+	    response.put("size", size);
+	    response.put("totalElements", bookPage.getTotalElements());
+	    response.put("totalPages", bookPage.getTotalPages());
+
+	    return ResponseEntity.ok(response);
+	}
 	@PostMapping("/updateBook/{bookId}")
 	public ResponseEntity<?> updateBookHandler(@RequestBody Book book,@PathVariable String bookId){
 		Book book1=bookService.updateBook(bookId, book);
@@ -87,6 +106,21 @@ public class BookController {
         List<Book> books = this.bookService.getAllBooksStatus(status);
         return ResponseEntity.ok(books);	
     }
+    
+    @GetMapping("/getBooksByStatusPage")
+    public ResponseEntity<Page<Book>> getBooksByStatusHandler(@RequestParam String status,
+                                                              @RequestParam(defaultValue = "0") int page,
+                                                              @RequestParam(defaultValue = "5") int size) 
+    {	
+        PageRequest pageable = PageRequest.of(page, size);
+
+        Page<Book> books = bookService.getAllBooksStatusPage(page, size, status);
+
+        return ResponseEntity.ok(books);
+    }
+    
+    
+    
     
     @GetMapping("/getBooksByCategoryAndStatus")
     public ResponseEntity<List<Book>> getBooksByStatusAndCategoryHandler(@RequestParam String status, @RequestParam String category) {

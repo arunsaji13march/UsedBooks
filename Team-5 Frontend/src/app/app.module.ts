@@ -36,7 +36,8 @@ import { TotalbooksComponent } from './totalbooks/totalbooks.component';
 import { AllordersComponent } from './allorders/allorders.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NotificationDialogComponent } from './notification-dialog/notification-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog'
+import { MatDialogModule } from '@angular/material/dialog';
+import { PaginationComponent } from './pagination/pagination.component'
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { MatDialogModule } from '@angular/material/dialog'
     TotalusersComponent,
     TotalbooksComponent,
     AllordersComponent,
-    NotificationDialogComponent
+    NotificationDialogComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

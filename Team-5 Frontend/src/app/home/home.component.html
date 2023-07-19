@@ -21,4 +21,11 @@
     </div>
 
 </div>
+
+
+<app-pagination
+[currentPage]="currentPage"
+[totalPages]="getTotalPages()"
+(pageChange)="onPageChange($event)"
+></app-pagination>
 <router-outlet></router-outlet>  

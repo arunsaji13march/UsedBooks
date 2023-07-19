@@ -55,9 +55,22 @@ export class BookServiceService {
     return this.httpClient.get<Books[]>("http://localhost:8085/books/v1/getBooksByCategoryAndStatus",{headers: new HttpHeaders().set('Authorization',`Bearer ${this.loginService.getBearerToken()}`),params})
   }
   
-  getBooksByStatus(status:string):Observable<Books[]>{
-    const params=new HttpParams().set('status',status);
-    return this.httpClient.get<Books[]>("http://localhost:8085/books/v1/getBooksByStatus",{headers: new HttpHeaders().set('Authorization',`Bearer ${this.loginService.getBearerToken()}`),params})
+  // getBooksByStatus(status:string,page:number, size: number):Observable<Books[]>{
+  //   const params=new HttpParams()
+  //   .set('status',status)
+  //   .set('page', page.toString())
+  //   .set('size', size.toString())
+    
+  //   return this.httpClient.get<Books[]>("http://localhost:8085/books/v1/getBooksByStatusPage",{headers: new HttpHeaders().set('Authorization',`Bearer ${this.loginService.getBearerToken()}`),params})
+  // }
+
+   getBooksByStatus(status:string,page:number, size: number):Observable<Books[]>{
+    const params=new HttpParams()
+    .set('status',status)
+    .set('page', page.toString())
+    .set('size', size.toString())
+    
+    return this.httpClient.get<Books[]>("http://localhost:8085/books/v1/getBooksByStatusPage",{params})
   }
   getBooksBySellerId(userId:any):Observable<Books[]>{
 

@@ -13,8 +13,6 @@
               <h5 class="card-subtitle mb-2 text-muted">{{book.category}}</h5>
               <h5 class="card-subtitle mb-2 text-muted">{{book.bookCondition}}</h5>
               <h4 class="card-title">&#8377;{{book.price}}</h4>
-
-              <!-- <p class="card-text">{{book.bookDetails}}</p> -->
               <a href="#" class="btn btn-primary">Buy</a>
               <a href="#" class="btn btn-outline-dark ms-2" ><i class="fa-solid fa-cart-shopping"></i></a>
 
@@ -25,4 +23,10 @@
     </div>
 
 </div>
+
+<app-pagination
+[currentPage]="currentPage"
+[totalPages]="getTotalPages()"
+(pageChange)="onPageChange($event)"
+></app-pagination>
 <router-outlet></router-outlet>  

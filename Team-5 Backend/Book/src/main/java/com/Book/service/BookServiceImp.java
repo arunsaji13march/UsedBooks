@@ -1,10 +1,13 @@
 package com.Book.service;
 
+import java.awt.print.Pageable;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.Book.model.Book;
@@ -67,10 +70,9 @@ public class BookServiceImp implements BookService {
 	}
 
 	@Override
-	public List<Book> getAllBooks() {
-		// TODO Auto-generated method stub
-		List<Book> bookList=this.bookRepository.findByStatus("Available");
-		return bookList;
+	public Page<Book> getAllBooks(int page, int size) {
+	    PageRequest pageable = PageRequest.of(page, size);
+	    return bookRepository.findAll(pageable);
 	}
 
 	@Override
@@ -152,6 +154,12 @@ public class BookServiceImp implements BookService {
 		}
 		return updatedOrderStatus;
 	}
+
+	@Override
+		public Page<Book> getAllBooksStatusPage(int page,int size, String status) {
+			 PageRequest pageable = PageRequest.of(page, size);
+			    return bookRepository.findByStatus(status, pageable);
+		}
 	
 	
 

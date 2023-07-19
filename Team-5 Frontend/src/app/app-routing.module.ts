@@ -23,6 +23,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AllordersComponent } from './allorders/allorders.component';
 import { TotalbooksComponent } from './totalbooks/totalbooks.component';
 import { TotalusersComponent } from './totalusers/totalusers.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 const routes: Routes = [
@@ -46,6 +47,10 @@ const routes: Routes = [
   {path:'orderHistory',component:OrderhistoryComponent,canActivate:[canactivateGuard]},
   {path:'paymentSuccess',component:PaymentsuccessComponent,canActivate:[canactivateGuard]},
   {path:'footer',component:FooterComponent},
+
+  {path:'pagination',component:PaginationComponent},
+
+
   {path:'editBook/:bookId',component:EditBookComponent},
   {path:'admin',component:AdminComponent,canActivate:[canactivateGuard]},
   {path:'totalusers',component:TotalusersComponent,canActivate:[canactivateGuard]},
